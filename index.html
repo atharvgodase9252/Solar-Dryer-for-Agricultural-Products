@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="description" content="Group 17, Sanjivani University Makerspace: a rotating, dome-covered solar dryer for agricultural products. Multi-tier trays turn slowly under a transparent dome so every tray gets even sunlight. Fabrication documented; performance testing next.">
+  <title>Rotary Solar Dryer for Agricultural Products | Group 17 Engineering Journal</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rotary Solar Dryer for Agricultural Products — Group 17">
+  <meta property="og:description" content="A dome-covered, motor-driven rotating tray solar dryer for farm produce. Built at Sanjivani University Makerspace.">
+  <meta property="og:image" content="https://atharvgodase9252.github.io/Solar-Dryer-for-Agricultural-Products/media/photos/dryer-with-dome.jpg">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem("solar-dryer-theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script defer src="./assets/js/site.js"></script>
+  <script type="module" src="./assets/js/viewer.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Rotary Solar Dryer, back to top">
+      <span class="brand-mark" aria-hidden="true">SD</span>
+      <span class="brand-type"><strong>Rotary Solar Dryer</strong><small>Group 17 · Makerspace</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#journey">Journey</a>
+      <a href="#design">Design</a>
+      <a href="#explorer-section">3D model</a>
+      <a href="#testing">Testing</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#status">Status</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme"><span class="theme-toggle-mark" aria-hidden="true"></span><span class="theme-toggle-text">Light</span></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 01 HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Group 17 · Sanjivani University · Makerspace</p>
+          <h1 id="hero-title">Rotary Solar Dryer <span class="h1-sub">— for Agricultural Products</span></h1>
+          <p class="hero-lede">Farmers lose a large share of their fruit, vegetables, grain and spices after harvest because open-sun drying is slow, uneven and exposed to dust, insects, birds and rain. Our dryer puts the produce on multi-tier galvanised trays inside a transparent dome, and a geared motor slowly turns the whole tray rack so every tray gets the same sunlight. The prototype is built; drying tests are next, so no performance results are claimed yet.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#journey">Explore the build <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#status">Build status</a>
+          </div>
+          <p class="hero-team"><span class="hero-team-label">Team</span> Group 17 — <span data-team-names>Team member names to be added</span></p>
+          <p class="hero-team"><span class="hero-team-label">Institute</span> Sanjivani University · Makerspace</p>
+        </div>
+        <figure class="hero-figure">
+          <button class="image-button" type="button" data-lightbox="media/photos/dryer-with-dome.jpg" data-caption="The assembled prototype: tray rack inside the transparent dome on the round base table.">
+            <img src="media/photos/dryer-with-dome.jpg" width="1204" height="1600" alt="The rotary solar dryer prototype: a transparent segmented dome over a round wooden table, with galvanised trays on a steel rack inside">
+          </button>
+          <figcaption><span class="label-chip">Photograph</span> The assembled prototype in the Makerspace.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 02 PROBLEM ============ -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 02</p>
+          <h2 id="problem-title">The problem we are solving</h2>
+        </header>
+        <div class="prose">
+          <p class="lede">Drying is the cheapest way to preserve farm produce, but most small farmers still dry it on the ground or on rooftops in open sun.</p>
+          <p>Open-sun drying is free, but the product is exposed to dust, insects, birds, animals and sudden rain; drying is slow and uneven, and quality and market value fall. Electric or fuel dryers solve this but cost too much to buy and run for a small farm. Simple box-type solar dryers are cheaper, yet trays near the front or the sunny side dry faster than trays at the back, so the farmer has to keep shifting trays by hand.</p>
+          <p>Our idea: a covered solar dryer whose tray rack <strong>rotates</strong>. A transparent dome traps solar heat and keeps the produce clean, and slow rotation gives every tray an equal share of sunlight — with no manual tray shuffling.</p>
+        </div>
+        <div class="table-wrap" tabindex="0" role="region" aria-labelledby="compare-caption">
+          <table class="compare-table">
+            <caption id="compare-caption">Drying approaches compared</caption>
+            <thead>
+              <tr><th scope="col">Approach</th><th scope="col">Potential advantages</th><th scope="col">Limitations</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Open-sun drying</th><td>No equipment cost; any amount of produce.</td><td>Dust, insects, birds and rain contamination; slow and uneven; weather-dependent; large losses.</td></tr>
+              <tr><th scope="row">Electric / fuel dryers</th><td>Fast, controlled temperature, works at night.</td><td>High purchase and running cost; needs grid power or fuel.</td></tr>
+              <tr><th scope="row">Fixed box-type solar dryer</th><td>Low cost; protected from contamination; faster than open sun.</td><td>Uneven sunlight across trays; trays must be rotated by hand.</td></tr>
+              <tr class="row-highlight"><th scope="row">Our rotary solar dryer</th><td>Dome traps heat and protects produce; rotating rack aims at uniform exposure on every tray; low-cost materials (MS square tube, GI sheet, acrylic).</td><td>Design aims, not results yet: drying rate, temperature rise and energy use are still to be measured.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote class="question">
+          <p class="eyebrow">The question we are answering</p>
+          <p>Can a low-cost, dome-covered solar dryer with a slowly rotating multi-tier tray rack dry agricultural produce faster and more evenly than open-sun drying, while keeping it clean?</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ 03 HOW IT WORKS ============ -->
+    <section class="section section-tinted" id="how" aria-labelledby="how-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 03</p>
+          <h2 id="how-title">How it is meant to work</h2>
+        </header>
+        <div class="how-grid">
+          <article class="how-card">
+            <span class="how-step">01</span>
+            <h3>Trap the sun</h3>
+            <p>Sunlight passes through the transparent dome and is absorbed by the produce and the galvanised trays. The dome holds the warm air in (greenhouse effect), so the air inside is hotter and drier than outside.</p>
+          </article>
+          <article class="how-card">
+            <span class="how-step">02</span>
+            <h3>Remove the moisture</h3>
+            <p>Warm air picks up moisture from the produce. Moist air has to leave the dome and be replaced by drier air; ventilation openings and airflow are part of the testing plan.</p>
+          </article>
+          <article class="how-card">
+            <span class="how-step">03</span>
+            <h3>Rotate for even drying</h3>
+            <p>A geared motor under the table turns a central shaft through a sprocket stage. The shaft turns the cross-arm rack; casters at the arm ends roll on the tabletop and carry the load, so each tray passes through the sunniest side in turn.</p>
+          </article>
+          <article class="how-card">
+            <span class="how-step">04</span>
+            <h3>Protect the produce</h3>
+            <p>Inside the closed dome the produce is protected from dust, insects, birds and sudden rain, which open-sun drying cannot offer.</p>
+          </article>
+        </div>
+        <figure class="schematic">
+          <figcaption class="figure-label"><span class="label-chip label-chip-warn">Conceptual — not measured</span> FIG. 1 — Side view of the dryer and the intended heat and rotation paths</figcaption>
+          <div class="schematic-scroll" tabindex="0" role="region" aria-label="Conceptual schematic">
+            <svg class="schematic-svg" viewBox="0 0 960 520" role="img" aria-labelledby="schem-title schem-desc">
+              <title id="schem-title">Conceptual working principle of the rotary solar dryer</title>
+              <desc id="schem-desc">Sun rays pass through the dome and heat the trays. Warm moist air rises and leaves through a vent. The motor under the table drives the central shaft through sprockets, turning the rack and trays. Casters roll on the tabletop.</desc>
+              <defs>
+                <marker id="arr-sun" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="fill-sun"></path></marker>
+                <marker id="arr-air" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="fill-air"></path></marker>
+              </defs>
+              <circle cx="110" cy="80" r="34" class="s-sun"></circle>
+              <g class="s-rays" marker-end="url(#arr-sun)">
+                <path d="M150 105 L330 190"></path>
+                <path d="M140 130 L300 260"></path>
+                <path d="M170 90 L420 150"></path>
+              </g>
+              <path d="M230 360 A250 250 0 0 1 730 360" class="s-dome"></path>
+              <path d="M480 110 V360" class="s-dome-rib"></path>
+              <rect x="200" y="360" width="560" height="16" class="s-table"></rect>
+              <rect x="250" y="376" width="14" height="130" class="s-leg"></rect>
+              <rect x="696" y="376" width="14" height="130" class="s-leg"></rect>
+              <rect x="264" y="470" width="432" height="8" class="s-leg"></rect>
+              <rect x="474" y="190" width="12" height="285" class="s-shaft"></rect>
+              <rect x="300" y="346" width="360" height="10" class="s-rack"></rect>
+              <circle cx="312" cy="356" r="6" class="s-wheel"></circle>
+              <circle cx="648" cy="356" r="6" class="s-wheel"></circle>
+              <rect x="440" y="196" width="10" height="150" class="s-rack"></rect>
+              <rect x="510" y="196" width="10" height="150" class="s-rack"></rect>
+              <g class="s-tray">
+                <rect x="300" y="300" width="150" height="10"></rect>
+                <rect x="520" y="300" width="150" height="10"></rect>
+                <rect x="320" y="250" width="130" height="10"></rect>
+                <rect x="520" y="250" width="130" height="10"></rect>
+                <rect x="345" y="200" width="105" height="10"></rect>
+                <rect x="520" y="200" width="105" height="10"></rect>
+              </g>
+              <g class="s-air" marker-end="url(#arr-air)">
+                <path d="M600 290 C640 240 600 190 560 150"></path>
+                <path d="M380 290 C340 240 380 190 440 140"></path>
+                <path d="M480 112 V40"></path>
+              </g>
+              <text x="496" y="52" class="s-label">Warm moist air out (vent — to be tested)</text>
+              <rect x="560" y="430" width="70" height="34" rx="6" class="s-motor"></rect>
+              <text x="545" y="500" class="s-label">Geared motor</text>
+              <ellipse cx="480" cy="420" rx="42" ry="7" class="s-sprocket"></ellipse>
+              <path d="M520 420 L575 432" class="s-chain"></path>
+              <text x="300" y="445" class="s-label">Sprocket on shaft</text>
+              <path d="M410 175 a70 22 0 1 1 140 0" class="s-rot" marker-end="url(#arr-air)"></path>
+              <text x="565" y="128" class="s-label">Rack rotates slowly</text>
+              <text x="110" y="373" class="s-label s-label-muted">Tabletop</text>
+              <text x="745" y="275" class="s-label">Transparent dome</text>
+              <text x="40" y="150" class="s-label">Solar radiation</text>
+            </svg>
+          </div>
+        </figure>
+        <div class="formula-card">
+          <h3>Key quantity: moisture content</h3>
+          <p>Drying performance is judged by how fast the produce loses water. Moisture content on a wet basis is</p>
+          <p class="formula">M<sub>wb</sub> = (W<sub>i</sub> − W<sub>d</sub>) / W<sub>i</sub> × 100 %</p>
+          <p>where W<sub>i</sub> is the initial mass of the sample and W<sub>d</sub> its mass after drying. We will weigh samples at fixed intervals in the dryer and in open sun side by side.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 ENGINEERING JOURNEY ============ -->
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 04</p>
+          <h2 id="journey-title">Engineering journey</h2>
+        </header>
+        <p class="section-intro">How the prototype was designed and built, in order, with real workshop photographs. Click any photo to enlarge it.</p>
+        <ol class="journey-steps" id="journey-steps"></ol>
+      </div>
+    </section>
+
+    <!-- ============ 05 DESIGN & CAD ============ -->
+    <section class="section section-tinted" id="design" aria-labelledby="design-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 05</p>
+          <h2 id="design-title">Design and CAD</h2>
+        </header>
+        <p class="section-intro">The dryer was modelled in SolidWorks as two main parts — the base table and the rotating tray rack — plus the bearing and drive parts. All part files are in the <a class="text-link" href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/tree/main/cad">cad</a> folder of the repository.</p>
+        <figure class="fig-primary">
+          <button class="image-button plate" type="button" data-lightbox="media/cad/cad-assembly.jpg" data-caption="SolidWorks assembly: base table (part 1) with the rotating rack (part 2) on top.">
+            <img src="media/cad/cad-assembly.jpg" width="1050" height="660" loading="lazy" alt="SolidWorks assembly showing the round table on steel legs and the cross-arm rotating rack with tiered arms on top">
+          </button>
+          <figcaption><span class="label-chip">CAD</span> FIG. 2 — SolidWorks assembly: base table + rotating rack.</figcaption>
+        </figure>
+        <div class="spec-layout">
+          <table class="spec-table">
+            <caption>Design specification</caption>
+            <tbody id="spec-rows"></tbody>
+          </table>
+          <div class="note-block">
+            <h3>CAD part files</h3>
+            <ul class="file-list" id="cad-files"></ul>
+            <p class="small-note">Open with SolidWorks 2026 or newer. Dimensions will be added to the spec table from the SolidWorks drawings.</p>
+          </div>
+        </div>
+        <h3 class="subhead">Part views</h3>
+        <div class="cad-grid" id="cad-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ 06 3D EXPLORER ============ -->
+    <section class="section" id="explorer-section" aria-labelledby="explorer-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 06</p>
+          <h2 id="explorer-title">Interactive 3D model</h2>
+        </header>
+        <p class="section-intro">Drag to orbit, scroll or pinch to zoom. Use the buttons to spin the rack, hide the dome or the trays. This is a simplified visualisation built from the CAD views and photographs — <strong>not</strong> the exact SolidWorks geometry.</p>
+        <div class="explorer" id="explorer">
+          <div class="explorer-toolbar" role="toolbar" aria-label="3D model controls">
+            <button type="button" class="tool" data-action="spin" aria-pressed="true">Rotate rack</button>
+            <button type="button" class="tool" data-layer="dome" aria-pressed="true">Dome</button>
+            <button type="button" class="tool" data-layer="trays" aria-pressed="true">Trays</button>
+            <button type="button" class="tool" data-layer="drive" aria-pressed="true">Drive</button>
+            <button type="button" class="tool tool-reset" data-action="reset">Reset view</button>
+          </div>
+          <div class="explorer-stage" id="explorer-stage" tabindex="0" aria-label="3D model of the rotary solar dryer">
+            <img class="model-fallback" src="media/cad/cad-assembly.jpg" alt="SolidWorks assembly of the solar dryer" loading="lazy">
+            <p class="fallback-note">3D view unavailable — showing the SolidWorks assembly instead.</p>
+          </div>
+          <p class="stage-note"><span class="label-chip label-chip-warn">Approximate</span> Proportions estimated from photographs; dome, trays and drive simplified.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 TESTING PLAN ============ -->
+    <section class="section section-tinted" id="testing" aria-labelledby="testing-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 07</p>
+          <h2 id="testing-title">Testing plan</h2>
+        </header>
+        <p class="section-intro">No test has been run yet. This is what we will measure, side by side with an open-sun control sample of the same produce, from about 9:00 to 17:00 on clear days.</p>
+        <div class="test-grid">
+          <article class="test-card"><h3>Moisture loss</h3><p>Weigh tray samples every hour on a digital balance; calculate moisture content and drying time to the target moisture.</p><p class="test-status">Pending</p></article>
+          <article class="test-card"><h3>Temperature</h3><p>Air temperature inside the dome at each tray level vs ambient, with a digital thermometer or thermocouples.</p><p class="test-status">Pending</p></article>
+          <article class="test-card"><h3>Relative humidity</h3><p>RH inside and outside the dome with a hygrometer — warm, dry air is what removes moisture.</p><p class="test-status">Pending</p></article>
+          <article class="test-card"><h3>Solar radiation</h3><p>Record sunlight intensity (W/m²) with a solar power meter so tests on different days can be compared.</p><p class="test-status">Pending</p></article>
+          <article class="test-card"><h3>Rotation</h3><p>Rack speed in rpm, smooth running of casters and bearing, and the motor's current draw and power.</p><p class="test-status">Pending</p></article>
+          <article class="test-card"><h3>Uniformity</h3><p>Compare moisture loss of trays on different levels and positions, with and without rotation.</p><p class="test-status">Pending</p></article>
+        </div>
+        <p class="small-note">Full protocol: <a class="text-link" href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/testing-plan.md">docs/testing-plan.md</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 08 SAFETY ============ -->
+    <section class="section" id="safety" aria-labelledby="safety-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 08</p>
+          <h2 id="safety-title">Safety and maintenance</h2>
+        </header>
+        <ul class="check-list">
+          <li>Keep hands clear of the sprocket and chain drive while the motor is powered; fit a guard over the drive.</li>
+          <li>Secure all motor wiring and keep it away from the moving rack and from water.</li>
+          <li>Check casters, bearing and welds before each run; the rack must turn without rubbing the dome.</li>
+          <li>Galvanised trays: use food-grade liners or keep produce from direct contact if the coating is damaged.</li>
+          <li>Clean trays and the inside of the dome after each batch to prevent mould and insects.</li>
+          <li>Acrylic dome: clean with mild soap and a soft cloth only; avoid solvents that crack or cloud it.</li>
+        </ul>
+        <p><a class="text-link" href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/safety-and-maintenance.md">Full safety and maintenance checklist ↗</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 09 GALLERY ============ -->
+    <section class="section section-tinted" id="gallery" aria-labelledby="gallery-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 09</p>
+          <h2 id="gallery-title">Gallery</h2>
+        </header>
+        <p class="section-intro">Real workshop photographs, video and SolidWorks screenshots from the project. No stock or generated images.</p>
+        <div class="gallery-filters" role="group" aria-label="Filter gallery" id="gallery-filters"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <figure class="video-figure">
+          <video controls preload="metadata" poster="media/video/drilling-bracket-poster.jpg" width="478" height="850">
+            <source src="media/video/drilling-bracket.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="label-chip">Video</span> Drilling the orange mounting bracket on the bench drill.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 10 STATUS ============ -->
+    <section class="section" id="status" aria-labelledby="status-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 10</p>
+          <h2 id="status-title">Build status</h2>
+        </header>
+        <p class="status-headline">Prototype fabricated — performance testing next</p>
+        <div class="status-groups" id="status-groups"></div>
+      </div>
+    </section>
+
+    <!-- ============ 11 REFERENCES ============ -->
+    <section class="section section-tinted" id="references" aria-labelledby="references-title">
+      <div class="shell">
+        <header class="title-block">
+          <p class="section-number"><span class="tb-label">SEC</span> 11</p>
+          <h2 id="references-title">Documentation and references</h2>
+        </header>
+        <div class="ref-layout">
+          <div>
+            <h3 class="subhead">Engineering record</h3>
+            <ul class="doc-list">
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/project-overview.md">Project overview</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/working-principle.md">Working principle</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/design-and-cad.md">Design and CAD</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/materials-and-components.md">Materials and components</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/fabrication-and-assembly.md">Fabrication and assembly</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/testing-plan.md">Testing plan</a></li>
+              <li><a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/safety-and-maintenance.md">Safety and maintenance</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="subhead">Key references</h3>
+            <ol class="ref-list">
+              <li>FAO. <em>Fruit and vegetable processing</em>, Chapter on drying (FAO Agricultural Services Bulletin 119).</li>
+              <li>Ekechukwu, O.V. &amp; Norton, B. “Review of solar-energy drying systems II: an overview of solar drying technology.” <em>Energy Conversion and Management</em> 40(6), 1999.</li>
+              <li>Sharma, A., Chen, C.R. &amp; Lan, N.V. “Solar-energy drying systems: A review.” <em>Renewable and Sustainable Energy Reviews</em> 13(6–7), 2009.</li>
+              <li>Duffie, J.A. &amp; Beckman, W.A. <em>Solar Engineering of Thermal Processes.</em> Wiley.</li>
+            </ol>
+            <p><a class="text-link" href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products/blob/main/docs/references.md">All references ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p><strong>Rotary Solar Dryer for Agricultural Products</strong> — Group 17 · Makerspace · Sanjivani University</p>
+      <p>Team: <span data-team-names>Team member names to be added</span></p>
+      <p>Drying performance: <strong>not yet measured</strong>. 3D view uses three.js (MIT licence).</p>
+      <p class="footer-meta">Last updated <time datetime="2026-11-26">26 November 2026</time> · <a href="https://github.com/atharvgodase9252/Solar-Dryer-for-Agricultural-Products" id="repo-link">View source on GitHub</a></p>
+    </div>
+  </footer>
+
+  <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar">
+      <strong id="dialog-title">Image</strong>
+      <button type="button" class="dialog-btn" id="dialog-close" aria-label="Close viewer">Close ×</button>
+    </div>
+    <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+    <p class="dialog-caption" id="dialog-caption"></p>
+  </dialog>
+</body>
+</html>
