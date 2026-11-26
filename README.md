@@ -1,4 +1,4 @@
-# Rotary Solar Dryer for Agricultural Products — Group 17
+# Rotary Solar Dryer for Agricultural Products — Group 22
 
 **Sanjivani University · Makerspace**
 
@@ -54,5 +54,5 @@ Created in SOLIDWORKS 2026 (Academic). Open with SOLIDWORKS 2026 or newer.
 
 ## Team
 
-Group 17 — *team member names to be added*
+Group 22 — *team member names to be added*
 Sanjivani University · Makerspace
