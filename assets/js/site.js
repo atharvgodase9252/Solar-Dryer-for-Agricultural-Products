@@ -112,7 +112,9 @@ const GALLERY = [
   { img: "media/photos/rack-base-and-casters.jpg", cat: "fabrication", caption: "Rack cross base with casters on the tabletop." },
   { img: "media/photos/drilling-rack-frame.jpg", cat: "fabrication", caption: "Drilling the rack arms." },
   { img: "media/video/drilling-bracket-poster.jpg", cat: "fabrication", caption: "Drilling the orange mounting bracket (frame from the video)." },
+  { img: "media/photos/fitting-casters-to-rack.jpg", cat: "fabrication", caption: "Fitting the swivel casters to the rack arms on the tabletop." },
   { img: "media/photos/drive-mechanism-under-table.jpg", cat: "mechanism", caption: "Geared motor, sprockets and central shaft under the table." },
+  { img: "media/photos/cad-modelling-on-laptop.jpg", cat: "cad", caption: "Modelling the dryer assembly in SolidWorks." },
   { img: "media/cad/cad-assembly.jpg", cat: "cad", caption: "SolidWorks assembly.", plate: true },
   { img: "media/cad/cad-base-table.png", cat: "cad", caption: "SolidWorks part 1: base table.", plate: true },
   { img: "media/cad/cad-rotating-rack.png", cat: "cad", caption: "SolidWorks part 2: rotating rack.", plate: true }
