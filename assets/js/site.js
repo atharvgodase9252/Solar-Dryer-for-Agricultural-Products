@@ -38,7 +38,7 @@ const JOURNEY = [
   {
     title: "Drive mechanism under the table",
     state: "done",
-    text: "A geared DC motor is mounted on the base frame under the tabletop. Through a sprocket stage it turns the vertical central shaft, which passes through the tabletop and drives the rack. A ball bearing (inner ring, outer ring, balls) was modelled for the shaft support.",
+    text: "A geared DC motor is mounted on the base frame under the tabletop. Through a chain and sprockets it turns the vertical central shaft, which passes through the tabletop and drives the rack. A ball bearing (inner ring, outer ring, balls) was modelled for the shaft support.",
     img: "media/photos/drive-mechanism-under-table.jpg",
     caption: "Under the table: geared motor, sprockets and the central shaft. Galvanised trays stacked on the floor."
   },
@@ -73,7 +73,7 @@ const SPEC = [
   ["Rotating rack", "Mild-steel square tube; cross base + two tiered towers"],
   ["Trays", "Galvanised iron (GI) sheet, sector-shaped, 4 per ring"],
   ["Rack support", "Swivel casters rolling on the tabletop"],
-  ["Drive", "Geared DC motor → sprockets → central vertical shaft"],
+  ["Drive", "Geared DC motor → chain and sprockets → central vertical shaft"],
   ["Shaft support", "Ball bearing (modelled: inner ring, outer ring, balls)"],
   ["Tabletop diameter", null],
   ["Dome height", null],
@@ -113,7 +113,9 @@ const GALLERY = [
   { img: "media/photos/drilling-rack-frame.jpg", cat: "fabrication", caption: "Drilling the rack arms." },
   { img: "media/video/drilling-bracket-poster.jpg", cat: "fabrication", caption: "Drilling the orange mounting bracket (frame from the video)." },
   { img: "media/photos/fitting-casters-to-rack.jpg", cat: "fabrication", caption: "Fitting the swivel casters to the rack arms on the tabletop." },
+  { img: "media/photos/drilling-steel-plate.jpg", cat: "fabrication", caption: "Drilling the steel mounting plates on the bench drill." },
   { img: "media/photos/drive-mechanism-under-table.jpg", cat: "mechanism", caption: "Geared motor, sprockets and central shaft under the table." },
+  { img: "media/video/chain-sprocket-drive-poster.jpg", cat: "mechanism", caption: "Chain-and-sprocket drive under the table (frame from the video)." },
   { img: "media/photos/cad-modelling-on-laptop.jpg", cat: "cad", caption: "Modelling the dryer assembly in SolidWorks." },
   { img: "media/cad/cad-assembly.jpg", cat: "cad", caption: "SolidWorks assembly.", plate: true },
   { img: "media/cad/cad-base-table.png", cat: "cad", caption: "SolidWorks part 1: base table.", plate: true },

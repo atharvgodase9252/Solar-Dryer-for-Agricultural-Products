@@ -14,7 +14,7 @@ A low-cost, dome-covered solar dryer for farm produce. The produce sits on multi
 
 1. **Trap the sun** — sunlight passes through the transparent dome and heats the produce and trays; the dome keeps the warm air in.
 2. **Remove moisture** — the warm, drier air takes up water from the produce; moist air must be vented.
-3. **Rotate for even drying** — a geared DC motor under the table drives the central shaft through sprockets. The shaft turns the cross-arm rack, whose casters roll on the tabletop and carry the load.
+3. **Rotate for even drying** — a geared DC motor under the table drives the central shaft through a chain and sprockets. The shaft turns the cross-arm rack, whose casters roll on the tabletop and carry the load.
 4. **Protect the produce** — the closed dome keeps out dust, insects, birds and rain.
 
 ## Repository contents

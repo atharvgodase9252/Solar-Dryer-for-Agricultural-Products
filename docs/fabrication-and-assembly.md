@@ -7,6 +7,7 @@
 5. **Drive mechanism** — geared motor and sprockets mounted under the tabletop to turn the central shaft. ![](../media/photos/drive-mechanism-under-table.jpg)
 6. **GI trays** cut and folded as sectors; trial-fitted on the rack. ![](../media/photos/trays-on-rotating-rack.jpg)
 7. **Dome and final assembly** — transparent dome with ribs fixed to the tabletop edge. ![](../media/photos/dryer-with-dome.jpg)
-8. **Bracket drilling** on the bench drill — see `media/video/drilling-bracket.mp4`.
+8. **Bracket and plate drilling** on the bench drill — see `media/video/drilling-bracket.mp4`. ![](../media/photos/drilling-steel-plate.jpg)
+9. **Chain-and-sprocket drive check** under the table — see `media/video/chain-sprocket-drive.mp4`. ![](../media/video/chain-sprocket-drive-poster.jpg)
 
 Dates were not recorded.

@@ -9,7 +9,7 @@
 | Casters | Swivel casters, bolted to arm ends | Carry rack load on the tabletop |
 | Dome | Transparent sheet segments with metal strip ribs, screwed to tabletop edge | Traps solar heat, protects produce |
 | Motor | Geared DC motor | Rotates the rack |
-| Transmission | Sprockets on motor and central shaft | Speed reduction / torque to shaft |
+| Transmission | Roller chain and sprockets (small on motor, large on central shaft) | Speed reduction / torque to shaft |
 | Shaft support | Ball bearing | Centres and supports the shaft |
 | Bracket | Orange plastic mounting bracket (drilled) | Mounting |
 | Fasteners | Bolts, nuts, self-tapping screws | Assembly |

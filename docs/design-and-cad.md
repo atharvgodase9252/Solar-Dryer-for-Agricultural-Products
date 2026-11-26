@@ -26,7 +26,7 @@ The dryer was modelled in SOLIDWORKS 2026 (Academic).
 | Rack | MS square tube, cross base + tiered towers |
 | Trays | GI sheet, sector-shaped, 4 per ring |
 | Rack support | Swivel casters on the tabletop |
-| Drive | Geared DC motor → sprockets → central shaft |
+| Drive | Geared DC motor → chain and sprockets → central shaft |
 | Tabletop diameter | *to be added from drawing* |
 | Dome height | *to be added* |
 | Tray levels / total tray area | *to be added* |
