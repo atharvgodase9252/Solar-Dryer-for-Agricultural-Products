@@ -1,7 +1,7 @@
 /* Rotary Solar Dryer — page content data and interactions. Edit the data below to update the site. */
 
 // ---- Team (edit these names) ----
-const TEAM_NAMES = "Team member names to be added";
+const TEAM_NAMES = "Atharv Godase · Shubham Aher · Arush Pawase · Shubham Gavande";
 
 // ---- Engineering journey ----
 const JOURNEY = [

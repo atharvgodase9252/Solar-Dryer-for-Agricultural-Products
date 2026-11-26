@@ -54,5 +54,13 @@ Created in SOLIDWORKS 2026 (Academic). Open with SOLIDWORKS 2026 or newer.
 
 ## Team
 
-Group 22 — *team member names to be added*
-Sanjivani University · Makerspace
+**Group 22** — Sanjivani University · Makerspace
+
+| # | Name |
+|---|---|
+| 1 | Atharv Godase |
+| 2 | Shubham Aher |
+| 3 | Arush Pawase |
+| 4 | Shubham Gavande |
+
+**Project Guide:** Dr. Kiran Wakchaure
