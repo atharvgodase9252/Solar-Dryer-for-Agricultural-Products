@@ -9,5 +9,6 @@
 7. **Dome and final assembly** — transparent dome with ribs fixed to the tabletop edge. ![](../media/photos/dryer-with-dome.jpg)
 8. **Bracket and plate drilling** on the bench drill — see `media/video/drilling-bracket.mp4`. ![](../media/photos/drilling-steel-plate.jpg)
 9. **Chain-and-sprocket drive check** under the table — see `media/video/chain-sprocket-drive.mp4`. ![](../media/video/chain-sprocket-drive-poster.jpg)
+10. **Laser cutting** — sheet parts cut on the Makerspace laser cutter. ![](../media/photos/laser-cutter-operating.jpg) ![](../media/photos/laser-cut-sheet-on-bed.jpg) ![](../media/photos/laser-cutter-lid-closed.jpg)
 
 Dates were not recorded.

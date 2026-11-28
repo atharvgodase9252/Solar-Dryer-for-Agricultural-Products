@@ -103,6 +103,7 @@ const GALLERY_CATEGORIES = [
   ["all", "All"],
   ["assembly", "Assembly"],
   ["fabrication", "Fabrication"],
+  ["laser", "Laser cutting"],
   ["mechanism", "Drive"],
   ["cad", "CAD"]
 ];
@@ -114,6 +115,9 @@ const GALLERY = [
   { img: "media/video/drilling-bracket-poster.jpg", cat: "fabrication", caption: "Drilling the orange mounting bracket (frame from the video)." },
   { img: "media/photos/fitting-casters-to-rack.jpg", cat: "fabrication", caption: "Fitting the swivel casters to the rack arms on the tabletop." },
   { img: "media/photos/drilling-steel-plate.jpg", cat: "fabrication", caption: "Drilling the steel mounting plates on the bench drill." },
+  { img: "media/photos/laser-cutter-operating.jpg", cat: "laser", caption: "Setting up the job on the laser cutter control panel." },
+  { img: "media/photos/laser-cut-sheet-on-bed.jpg", cat: "laser", caption: "Laser-cut sheet part on the cutting bed." },
+  { img: "media/photos/laser-cutter-lid-closed.jpg", cat: "laser", caption: "Laser cutter running with the lid closed." },
   { img: "media/photos/drive-mechanism-under-table.jpg", cat: "mechanism", caption: "Geared motor, sprockets and central shaft under the table." },
   { img: "media/video/chain-sprocket-drive-poster.jpg", cat: "mechanism", caption: "Chain-and-sprocket drive under the table (frame from the video)." },
   { img: "media/photos/cad-modelling-on-laptop.jpg", cat: "cad", caption: "Modelling the dryer assembly in SolidWorks." },
