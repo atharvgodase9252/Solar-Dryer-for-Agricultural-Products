@@ -17,6 +17,14 @@ A low-cost, dome-covered solar dryer for farm produce. The produce sits on multi
 3. **Rotate for even drying** — a geared DC motor under the table drives the central shaft through a chain and sprockets. The shaft turns the cross-arm rack, whose casters roll on the tabletop and carry the load.
 4. **Protect the produce** — the closed dome keeps out dust, insects, birds and rain.
 
+## Laser cutting
+
+Flat sheet parts were cut on the Makerspace SIL Lasers CO₂ laser cutter — see [docs/laser-cutting.md](docs/laser-cutting.md).
+
+| Job set-up | Cutting | Finished part |
+|---|---|---|
+| ![](media/photos/laser-cutter-operating.jpg) | ![](media/photos/laser-cutter-lid-closed.jpg) | ![](media/photos/laser-cut-sheet-on-bed.jpg) |
+
 ## Repository contents
 
 | Folder / file | What it contains |
@@ -48,6 +56,7 @@ Created in SOLIDWORKS 2026 (Academic). Open with SOLIDWORKS 2026 or newer.
 - [Design and CAD](docs/design-and-cad.md)
 - [Materials and components](docs/materials-and-components.md)
 - [Fabrication and assembly](docs/fabrication-and-assembly.md)
+- [Laser cutting](docs/laser-cutting.md)
 - [Testing plan](docs/testing-plan.md)
 - [Safety and maintenance](docs/safety-and-maintenance.md)
 - [References](docs/references.md)

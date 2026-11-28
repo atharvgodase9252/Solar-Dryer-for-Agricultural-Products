@@ -50,6 +50,13 @@ const JOURNEY = [
     caption: "Sector-shaped GI trays placed on the rack arms during trial assembly."
   },
   {
+    title: "Laser cutting sheet parts",
+    state: "done",
+    text: "Flat sheet parts were cut on the Makerspace SIL Lasers CO2 laser cutter from a 2D outline exported from CAD, giving accurate, repeatable parts with clean edges. Details in the Laser cutting section.",
+    img: "media/photos/laser-cutter-operating.jpg",
+    caption: "Setting up the cutting job on the laser cutter control panel."
+  },
+  {
     title: "Transparent dome and final assembly",
     state: "done",
     text: "A transparent segmented dome with metal ribs is fixed to the edge of the tabletop. It covers the whole rack, traps solar heat and protects the produce.",
@@ -130,7 +137,7 @@ const GALLERY = [
 const STATUS = [
   {
     group: "Design",
-    items: [["Concept", "done"], ["Base table CAD", "done"], ["Rotating rack CAD", "done"], ["Bearing and sprocket parts", "done"], ["Dimensioned drawings online", "pending"]]
+    items: [["Concept", "done"], ["Base table CAD", "done"], ["Rotating rack CAD", "done"], ["Bearing and sprocket parts", "done"], ["Laser-cut sheet parts", "done"], ["Dimensioned drawings online", "pending"]]
   },
   {
     group: "Fabrication",

@@ -5,3 +5,4 @@
 3. Sharma, A., Chen, C.R. & Lan, N.V. (2009). Solar-energy drying systems: A review. *Renewable and Sustainable Energy Reviews*, 13(6–7), 1185–1210.
 4. Duffie, J.A. & Beckman, W.A. *Solar Engineering of Thermal Processes.* Wiley.
 5. three.js — JavaScript 3D library (MIT licence), used for the website's 3D view.
+6. SIL Lasers (Suresh Indu Lasers Pvt. Ltd.). CO₂ laser engraving and cutting machines. https://silasers.com/laser-engraving-and-cutting-machine/
