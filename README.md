@@ -13,7 +13,7 @@ A low-cost, dome-covered solar dryer for farm produce. The produce sits on multi
 ## How it works
 
 1. **Trap the sun** — sunlight passes through the transparent dome and heats the produce and trays; the dome keeps the warm air in.
-2. **Remove moisture** — the warm, drier air takes up water from the produce; moist air must be vented.
+2. **Remove moisture** — the warm, drier air takes up water from the produce; a small fan in the dome's top opening moves the moist air out.
 3. **Rotate for even drying** — a geared DC motor under the table drives the central shaft through a chain and sprockets. The shaft turns the cross-arm rack, whose casters roll on the tabletop and carry the load.
 4. **Protect the produce** — the closed dome keeps out dust, insects, birds and rain.
 
@@ -46,8 +46,11 @@ Flat sheet parts were cut on the Makerspace SIL Lasers CO₂ laser cutter — se
 | `cad/outer-ring.SLDPRT` | Bearing outer ring |
 | `cad/ball.SLDPRT` | Bearing ball |
 | `cad/tooth.SLDPRT` | Sprocket / gear tooth part |
+| `cad/dome/Solar_Dome_7_Panel_Assembly.step` | Dome assembly — 7 curved panels, Ø1300 mm base, 450 mm high, Ø250 mm top opening, 2.5 mm panels (STEP) |
+| `cad/dome/Solar_Dome_7_Panel_Assembly_Fused.step` | Dome as one fused solid (STEP) |
+| `cad/dome/Dome_Panel_1.step` … `Dome_Panel_7.step` | Individual dome panels (STEP) |
 
-Created in SOLIDWORKS 2026 (Academic). Open with SOLIDWORKS 2026 or newer.
+SLDPRT files were created in SOLIDWORKS 2026 (Academic) — open with SOLIDWORKS 2026 or newer. Dome files are STEP and open in SolidWorks or any CAD program.
 
 ## Documentation
 

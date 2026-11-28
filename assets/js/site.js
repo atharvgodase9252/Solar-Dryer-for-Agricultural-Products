@@ -64,6 +64,13 @@ const JOURNEY = [
     caption: "The assembled prototype with the transparent dome."
   },
   {
+    title: "Ventilation fan in the dome top",
+    state: "done",
+    text: "The dome is a spherical cap made of 7 curved transparent panels (CAD: base Ø1300 mm, height 450 mm, 2.5 mm panels). Its Ø250 mm top opening carries a small fan on a round mounting ring, to move the warm, moist air out of the dome.",
+    img: "media/photos/dome-top-ventilation-fan.jpg",
+    caption: "The dome turned over: ventilation fan fitted in the round ring at the top opening, metal ribs between the panels."
+  },
+  {
     title: "Performance testing",
     state: "pending",
     text: "Next: side-by-side drying tests against open-sun drying, measuring moisture loss, temperature, humidity and rotation. See the testing plan.",
@@ -75,7 +82,11 @@ const JOURNEY = [
 // ---- Design specification (replace "To be added" with values from the SolidWorks drawings) ----
 const SPEC = [
   ["Dryer type", "Direct (greenhouse-type) solar dryer with rotating tray rack"],
-  ["Cover", "Transparent segmented dome with metal ribs"],
+  ["Cover", "Transparent spherical-cap dome of 7 curved panels with metal ribs"],
+  ["Dome base diameter", "1300 mm (dome CAD model)"],
+  ["Dome height", "450 mm (dome CAD model)"],
+  ["Dome top opening", "Ø250 mm, fitted with a ventilation fan on a round mounting ring"],
+  ["Dome panel thickness", "2.5 mm (dome CAD model)"],
   ["Base", "Round tabletop on mild-steel square-tube stand with bracing"],
   ["Rotating rack", "Mild-steel square tube; cross base + two tiered towers"],
   ["Trays", "Galvanised iron (GI) sheet, sector-shaped, 4 per ring"],
@@ -83,7 +94,6 @@ const SPEC = [
   ["Drive", "Geared DC motor → chain and sprockets → central vertical shaft"],
   ["Shaft support", "Ball bearing (modelled: inner ring, outer ring, balls)"],
   ["Tabletop diameter", null],
-  ["Dome height", null],
   ["Number of tray levels", null],
   ["Total tray area", null],
   ["Rack speed", null],
@@ -96,7 +106,11 @@ const CAD_FILES = [
   ["inner-ring.SLDPRT", "Bearing inner ring"],
   ["outer-ring.SLDPRT", "Bearing outer ring"],
   ["ball.SLDPRT", "Bearing ball"],
-  ["tooth.SLDPRT", "Sprocket / gear tooth part"]
+  ["tooth.SLDPRT", "Sprocket / gear tooth part"],
+  ["dome/Solar_Dome_7_Panel_Assembly.step", "Dome assembly: 7 separate curved panels (STEP, opens in SolidWorks)"],
+  ["dome/Solar_Dome_7_Panel_Assembly_Fused.step", "Dome as one fused solid (STEP)"],
+  ["dome/Dome_Panel_1.step", "Dome panel 1 of 7 (panels 2–7 in the same folder)"],
+  ["dome/README-dome.txt", "Dome model notes and dimensions"]
 ];
 
 const CAD_VIEWS = [
@@ -117,6 +131,7 @@ const GALLERY_CATEGORIES = [
 const GALLERY = [
   { img: "media/photos/dryer-with-dome.jpg", cat: "assembly", caption: "Assembled dryer with the transparent dome." },
   { img: "media/photos/trays-on-rotating-rack.jpg", cat: "assembly", caption: "GI sector trays on the rotating rack." },
+  { img: "media/photos/dome-top-ventilation-fan.jpg", cat: "assembly", caption: "Dome top with the ventilation fan in its mounting ring." },
   { img: "media/photos/rack-base-and-casters.jpg", cat: "fabrication", caption: "Rack cross base with casters on the tabletop." },
   { img: "media/photos/drilling-rack-frame.jpg", cat: "fabrication", caption: "Drilling the rack arms." },
   { img: "media/video/drilling-bracket-poster.jpg", cat: "fabrication", caption: "Drilling the orange mounting bracket (frame from the video)." },
@@ -137,11 +152,11 @@ const GALLERY = [
 const STATUS = [
   {
     group: "Design",
-    items: [["Concept", "done"], ["Base table CAD", "done"], ["Rotating rack CAD", "done"], ["Bearing and sprocket parts", "done"], ["Laser-cut sheet parts", "done"], ["Dimensioned drawings online", "pending"]]
+    items: [["Concept", "done"], ["Base table CAD", "done"], ["Rotating rack CAD", "done"], ["Bearing and sprocket parts", "done"], ["Dome CAD (7 panels)", "done"], ["Laser-cut sheet parts", "done"], ["Dimensioned drawings online", "pending"]]
   },
   {
     group: "Fabrication",
-    items: [["Base stand and tabletop", "done"], ["Rotating rack + casters", "done"], ["GI trays", "done"], ["Transparent dome", "done"], ["Motor and sprocket drive", "done"]]
+    items: [["Base stand and tabletop", "done"], ["Rotating rack + casters", "done"], ["GI trays", "done"], ["Transparent dome", "done"], ["Motor and sprocket drive", "done"], ["Dome ventilation fan", "done"]]
   },
   {
     group: "Testing",

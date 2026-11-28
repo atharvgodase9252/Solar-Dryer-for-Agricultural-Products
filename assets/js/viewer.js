@@ -28,7 +28,7 @@ function buildScene() {
   const rib = new THREE.MeshStandardMaterial({ color: 0x3a3a3a, metalness: 0.7, roughness: 0.4 });
 
   const tableTopY = 0.76;
-  const tableRadius = 0.75;
+  const tableRadius = 0.68; // tabletop: approximate
   const tube = 0.03;
 
   function box(width, height, depth, material, x, y, z) {
@@ -90,7 +90,7 @@ function buildScene() {
   const rack = new THREE.Group();
   const casterH = 0.05;
   const baseY = tableTopY + casterH + tube / 2;
-  const armLength = 0.64;
+  const armLength = 0.6;
   rack.add(box(2 * armLength, tube, tube, rackSteel, 0, baseY, 0));
   rack.add(box(tube, tube, 2 * armLength, rackSteel, 0, baseY, 0));
   const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
@@ -105,12 +105,12 @@ function buildScene() {
 
   // tray levels: height above the tabletop and outer radius (must fit inside the dome)
   const levels = [
-    { h: 0.14, r: 0.6 },
-    { h: 0.32, r: 0.54 },
-    { h: 0.5, r: 0.42 }
+    { h: 0.1, r: 0.55 },
+    { h: 0.22, r: 0.46 },
+    { h: 0.34, r: 0.32 }
   ];
   const postOffset = 0.09;
-  const towerHeight = levels[levels.length - 1].h + 0.1;
+  const towerHeight = levels[levels.length - 1].h + 0.04;
   for (const [dx, dz] of directions) {
     rack.add(box(tube, towerHeight, tube, rackSteel, dx * postOffset, tableTopY + casterH + towerHeight / 2, dz * postOffset));
     for (const level of levels) {
@@ -148,23 +148,57 @@ function buildScene() {
   rotor.add(trays);
   scene.add(rotor);
 
-  // ---- Dome ----
+  // ---- Dome (from the STEP model: 7 panels, base Ø1300 mm, height 450 mm, top opening Ø250 mm) ----
   const dome = new THREE.Group();
-  const domeRadius = tableRadius - 0.01;
-  const shell = new THREE.Mesh(new THREE.SphereGeometry(domeRadius, 64, 32, 0, Math.PI * 2, 0, Math.PI / 2), domeGlass);
-  shell.position.y = tableTopY;
+  const domeBaseRadius = 0.65;
+  const domeHeight = 0.45;
+  const topOpeningRadius = 0.125;
+  const sphereRadius = (domeBaseRadius * domeBaseRadius + domeHeight * domeHeight) / (2 * domeHeight); // spherical cap
+  const sphereCentreY = tableTopY + domeHeight - sphereRadius;
+  const phiTop = Math.asin(topOpeningRadius / sphereRadius);
+  const phiBase = Math.acos((tableTopY - sphereCentreY) / sphereRadius);
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(sphereRadius, 70, 32, 0, Math.PI * 2, phiTop, phiBase - phiTop), domeGlass);
+  shell.position.y = sphereCentreY;
   shell.renderOrder = 2;
   dome.add(shell);
-  for (let k = 0; k < 6; k++) {
-    const arc = new THREE.Mesh(new THREE.TorusGeometry(domeRadius, 0.006, 6, 64, Math.PI), rib);
-    arc.position.y = tableTopY;
-    arc.rotation.y = (k * Math.PI) / 6;
-    dome.add(arc);
+  const panelCount = 7;
+  for (let k = 0; k < panelCount; k++) {
+    const theta = (k * 2 * Math.PI) / panelCount;
+    const points = [];
+    for (let s = 0; s <= 24; s++) {
+      const phi = phiTop + ((phiBase - phiTop) * s) / 24;
+      points.push(new THREE.Vector3(
+        sphereRadius * Math.sin(phi) * Math.cos(theta),
+        sphereCentreY + sphereRadius * Math.cos(phi),
+        sphereRadius * Math.sin(phi) * Math.sin(theta)
+      ));
+    }
+    const ribMesh = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 32, 0.006, 6, false), rib);
+    dome.add(ribMesh);
   }
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(domeRadius, 0.008, 6, 96), rib);
-  ring.rotation.x = Math.PI / 2;
-  ring.position.y = tableTopY + 0.01;
-  dome.add(ring);
+  const baseRing = new THREE.Mesh(new THREE.TorusGeometry(domeBaseRadius, 0.008, 6, 96), rib);
+  baseRing.rotation.x = Math.PI / 2;
+  baseRing.position.y = tableTopY + 0.005;
+  dome.add(baseRing);
+
+  // ventilation fan in the top opening, on a round wooden mounting ring
+  const fanRing = new THREE.Mesh(new THREE.RingGeometry(0.075, 0.15, 48), new THREE.MeshStandardMaterial({ color: 0xd9b48a, roughness: 0.7, side: THREE.DoubleSide }));
+  fanRing.rotation.x = -Math.PI / 2;
+  fanRing.position.y = tableTopY + domeHeight + 0.002;
+  dome.add(fanRing);
+  const fanHousing = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.07, 40, 1, true), new THREE.MeshStandardMaterial({ color: 0xf2f2f2, roughness: 0.5, side: THREE.DoubleSide }));
+  fanHousing.position.y = tableTopY + domeHeight + 0.035;
+  dome.add(fanHousing);
+  const fanBlades = new THREE.Group();
+  for (let b = 0; b < 7; b++) {
+    const blade = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.004, 0.025), new THREE.MeshStandardMaterial({ color: 0xffffff }));
+    blade.position.set(0.035 * Math.cos((b * 2 * Math.PI) / 7), 0, 0.035 * Math.sin((b * 2 * Math.PI) / 7));
+    blade.rotation.y = -(b * 2 * Math.PI) / 7;
+    blade.rotation.x = 0.5;
+    fanBlades.add(blade);
+  }
+  fanBlades.position.y = tableTopY + domeHeight + 0.04;
+  dome.add(fanBlades);
   scene.add(dome);
 
   // ---- Floor ----
@@ -173,7 +207,7 @@ function buildScene() {
   floor.receiveShadow = true;
   scene.add(floor);
 
-  return { scene, rotor, bigSprocket, smallSprocket, layers: { dome, trays, drive } };
+  return { scene, rotor, bigSprocket, smallSprocket, fanBlades, layers: { dome, trays, drive } };
 }
 
 function start() {
@@ -188,7 +222,7 @@ function start() {
   stage.append(renderer.domElement);
   stage.classList.add("has-3d");
 
-  const { scene, rotor, bigSprocket, smallSprocket, layers } = buildScene();
+  const { scene, rotor, bigSprocket, smallSprocket, fanBlades, layers } = buildScene();
 
   scene.add(new THREE.HemisphereLight(0xfff4e0, 0x404858, 1.4));
   const sun = new THREE.DirectionalLight(0xfff1d0, 2.4);
@@ -253,6 +287,7 @@ function start() {
       bigSprocket.rotation.z += speed * dt;
       smallSprocket.rotation.z -= speed * dt * 2.4;
     }
+    fanBlades.rotation.y += 6 * dt;
     controls.update();
     renderer.render(scene, camera);
   });
